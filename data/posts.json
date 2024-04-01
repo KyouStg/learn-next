@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": "next.js-learn",
+      "title": "next.jsを学ぶ",
+      "content": "next.jsでブログを作りながら学ぶ",
+      "createdAt": "2024/03/29"
+    },
+    {
+      "id": "json-server",
+      "title": "jsonサーバー",
+      "content": "json-serverは、簡単にREST APIを構築できるツールです。ローカルマシン上にJSONファイルを置くだけで、RESTfulなAPIを作成し、GET、POST、PUT、DELETEなどのHTTPリクエストを使用してデータの取得、作成、更新、削除を行うことができます。",
+      "createdAt": "2024/03/30"
+    }
+  ]
+}
