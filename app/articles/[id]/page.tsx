@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import {deleteArticle, getDetailArticle} from "@/blogApi";
+import {getDetailArticle} from "@/blogApi";
 import DeleteButton from "@/app/components/DeleteButton";
 
 export default async function Article({ params }: {params: { id: string }}) {
