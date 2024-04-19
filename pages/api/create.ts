@@ -1,18 +1,19 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import {mongoClient} from "@/utils/mongoClient";
 
-export default async function handler(
+export default async function createHandler(
   req: NextApiRequest,
   res: NextApiResponse
 ){
+  const { id, title, content } = req.body;
 
   await mongoClient.connect()
     .then(client => {
       const collection = client.db("articles").collection("posts");
-      return collection.find().toArray();
+      return collection.insertOne({ id, title, content, createdAt: new Date().toISOString() });
     })
-    .then(posts => {
-      res.status(200).json(posts);
+    .then(mongoId => {
+      res.status(200).json(mongoId);
     })
     .catch(error => {
       console.error(error);

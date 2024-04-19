@@ -21,7 +21,7 @@ export default function ArticleCard({article} : ArticleCardProps) {
       <div className="bg-white flex flex-col justify-start p-6">
         <Link href="#" className="text-blue-700 text-sm font-bold uppercase pb-4">Technology</Link>
         <Link href={`articles/${article.id}`} className="text-slate-900 text-3xl font-bold hover:text-gray-700 pb-4">{article.title}</Link>
-        <p className="text-sm pb-3 text-slate-900">published on {article.createdAt}</p>
+        <p className="text-sm pb-3 text-slate-900">published on {new Date(article.createdAt).toLocaleString()}</p>
         <Link href={`articles/${article.id}`} className="pb-6 text-slate-900">
           {article.content.length > 70
             ? article.content.substring(0, 70) + "..."

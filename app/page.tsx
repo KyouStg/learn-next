@@ -1,7 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
 import ArticleList from "@/app/components/ArticleList";
-import {getAllArticles} from "@/blogApi";
+//import {getAllArticles} from "@/blogApi";
 
 export default async function Home() {
   //const articles = await getAllArticles()
