@@ -12,7 +12,7 @@ export default async function Article({ params }: {params: { id: string }}) {
 
   useEffect(() => {
     const fetchArticle = async () => {
-      const res = await fetch(`${API_URL}/api/${params.id}`, {
+      const res = await fetch(`${API_URL}/api/blog/${params.id}`, {
         method: "GET"
       });
       const data = await res.json();

@@ -5,7 +5,7 @@ export default async function Home() {
   //const articles = await getAllArticles()
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${API_URL}/api/`, { cache: "no-store" }); //SSR
+  const res = await fetch(`${API_URL}/api/blog`, { cache: "no-store" }); //SSR
   const articles = await res.json()
 
   return (
