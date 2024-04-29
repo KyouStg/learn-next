@@ -16,7 +16,7 @@ export default function PutBlogPage({ params }: { params: { id: string } }) {
     setLoading(true);
 
     const API_URL = process.env.NEXT_PUBLIC_API_URL;
-    await fetch(`${API_URL}/api/${params.id}`, {
+    await fetch(`${API_URL}/api/blog/${params.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
