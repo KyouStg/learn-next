@@ -1,33 +1,16 @@
-"use client";
-import React, {useEffect, useState} from "react";
 import Image from "next/image";
-//import {getDetailArticle} from "@/blogApi";
 import DeleteButton from "@/app/components/DeleteButton";
 import Link from "next/link";
 
 export default async function Article({ params }: {params: { id: string }}) {
-  //const detailArticle = await getDetailArticle(params.id);
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
-  const [detailArticle, setDetailArticle] = useState<any>(null);
 
-  useEffect(() => {
-    const fetchArticle = async () => {
-      const res = await fetch(`${API_URL}/api/blog/${params.id}`, {
-        method: "GET"
-      });
-      const data = await res.json();
-      setDetailArticle(data);
-    };
-
-    fetchArticle();
-  }, []);
-
-  if (!detailArticle) {
-
-    return <div>Loading...</div>;
-  }
-
-
+  const res = await fetch(`${API_URL}/api/${params.id}`, {
+    next: {
+      revalidate: 10,
+    },
+  });
+  const detailArticle = await res.json();
 
   return (
       <div className="max-w-3xl mx-auto p-5">
